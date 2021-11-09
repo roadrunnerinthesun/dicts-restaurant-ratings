@@ -15,9 +15,27 @@ def rating_list(file):
 
     for line in opened_file:
         line = line.rstrip()
-        word = line.split(":")
-        print(word)
-hello
+        # sorted(line)
+        # print(line)
+        restaurant, score = line.split(":")
+        # print(restaurant)
+        r_ratings[restaurant] = score
+        # print(r_ratings)
+
+    key_and_value = r_ratings.items()
+    sorted_key_and_value = sorted(key_and_value)
+    # print(sorted_key_and_value)
+
+
+    for t in sorted_key_and_value:
+        print(f"{t[0]} is rated at {t[1]}.")
+
+    # for restaurant, score in r_ratings.items():
+    #     sorted_dict = sorted(r_ratings)
+    #     print(sorted_dict)
+
+        # print(f"{restaurant} is rated at {score}.")
+
 rating_list("scores.txt")
 
  
